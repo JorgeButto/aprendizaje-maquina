@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chatbot COVID-19</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-layout" aria-label="Chatbot COVID-19">
+        <aside class="sidebar" aria-label="Panel informativo">
+          <div class="brand">
+            <span class="brand-mark">C19</span>
+            <div>
+              <h1>Chatbot COVID-19</h1>
+              <p>Orientacion sanitaria preliminar</p>
+            </div>
+          </div>
+
+          <div class="model-card">
+            <span class="model-label">Modelo local</span>
+            <strong id="status">Conectando</strong>
+          </div>
+
+          <div class="topic-list" aria-label="Temas disponibles">
+            <h2>Temas de consulta</h2>
+            <button class="topic-chip" type="button" data-prompt="Tengo fiebre y tos, ¿que podria hacer?">
+              Fiebre y tos
+            </button>
+            <button class="topic-chip" type="button" data-prompt="Tuve contacto con una persona positiva, ¿que hago?">
+              Contacto positivo
+            </button>
+            <button class="topic-chip" type="button" data-prompt="¿Cuales son los sintomas frecuentes de COVID-19?">
+              Sintomas frecuentes
+            </button>
+            <button class="topic-chip" type="button" data-prompt="¿Que medidas de prevencion puedo seguir?">
+              Prevencion
+            </button>
+          </div>
+        </aside>
+
+        <section class="chat-panel">
+          <header class="chat-header">
+            <div>
+              <span class="eyebrow">Asistente web</span>
+              <h2>Consulta interactiva</h2>
+            </div>
+            <button id="clear-chat" class="ghost-button" type="button">Limpiar</button>
+          </header>
+
+          <div id="messages" class="messages" aria-live="polite">
+            <article class="message bot">
+              <span class="avatar">AI</span>
+              <div class="bubble">
+                Hola. Puedes escribir tu consulta o seleccionar un tema del panel lateral para comenzar.
+              </div>
+            </article>
+          </div>
+
+          <form id="chat-form" class="chat-form">
+            <label class="sr-only" for="message-input">Escribe tu consulta</label>
+            <textarea
+              id="message-input"
+              name="message"
+              rows="2"
+              maxlength="700"
+              placeholder="Escribe tu pregunta aqui..."
+              autocomplete="off"
+            ></textarea>
+            <div class="form-actions">
+              <span id="char-count">0/700</span>
+              <button id="send-button" type="submit">Enviar</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

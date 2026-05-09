@@ -1,0 +1,790 @@
+{
+  "metadata": {
+    "source_dataset": "C:\\Users\\jorge\\OneDrive\\Desktop\\UNIVERSIDARKS\\aprendizaje-maquina\\Fase 1\\dataset_elpino.csv",
+    "generated_at": "2026-05-09T19:14:44",
+    "total_rows": 14561,
+    "strict_covid_rows": 857,
+    "covid_related_rows": 857,
+    "epidemiological_context_rows": 809,
+    "high_signal_rows": 718,
+    "filter_strategy": "Se incluyen solo filas con COVID explicito en diagnosticos: U07.1, U07.2 o texto COVID/SARS/coronavirus que no corresponda a historia personal. Los sintomas respiratorios aislados no activan el filtro.",
+    "strict_covid_codes": [
+      "U07.1",
+      "U07.2"
+    ],
+    "epidemiological_codes": [
+      "Z01.7",
+      "Z20.8",
+      "Z29.0"
+    ]
+  },
+  "dataset_signals": {
+    "common_covid_diagnoses": [
+      {
+        "item": "U07.1 - COVID-19, virus identificado",
+        "count": 756,
+        "rate": 0.8821
+      },
+      {
+        "item": "Z29.0 - Aislamiento",
+        "count": 665,
+        "rate": 0.776
+      },
+      {
+        "item": "Z01.7 - Examen de laboratorio",
+        "count": 644,
+        "rate": 0.7515
+      },
+      {
+        "item": "I10 - Hipertensión esencial (primaria)",
+        "count": 383,
+        "rate": 0.4469
+      },
+      {
+        "item": "J12.8 - Neumonía debida a otros virus",
+        "count": 367,
+        "rate": 0.4282
+      },
+      {
+        "item": "R06.0 - Disnea",
+        "count": 278,
+        "rate": 0.3244
+      },
+      {
+        "item": "R05 - Tos",
+        "count": 227,
+        "rate": 0.2649
+      },
+      {
+        "item": "Z92.2 - Historia personal de uso (presente) de otros medicamentos por largo tiempo",
+        "count": 215,
+        "rate": 0.2509
+      },
+      {
+        "item": "J96.09 - Insuficiencia respiratoria aguda, Tipo no especificado",
+        "count": 199,
+        "rate": 0.2322
+      },
+      {
+        "item": "E11.9 - Diabetes mellitus tipo 2 sin complicaciones",
+        "count": 181,
+        "rate": 0.2112
+      },
+      {
+        "item": "N17.9 - Insuficiencia renal aguda, no especificada",
+        "count": 155,
+        "rate": 0.1809
+      },
+      {
+        "item": "O98.5 - Otras enfermedades virales que complican el embarazo, el parto y el puerperio",
+        "count": 138,
+        "rate": 0.161
+      },
+      {
+        "item": "R50.9 - Fiebre, no especificada",
+        "count": 123,
+        "rate": 0.1435
+      },
+      {
+        "item": "E66.9 - Obesidad, no especificada",
+        "count": 111,
+        "rate": 0.1295
+      },
+      {
+        "item": "Z39.0 - Atención y examen inmediatamente después del parto",
+        "count": 110,
+        "rate": 0.1284
+      },
+      {
+        "item": "Z39.2 - Seguimiento postparto, de rutina",
+        "count": 110,
+        "rate": 0.1284
+      },
+      {
+        "item": "Z37.0 - Nacido vivo, único",
+        "count": 109,
+        "rate": 0.1272
+      },
+      {
+        "item": "Z39.1 - Atención y examen de madre en período de lactancia",
+        "count": 109,
+        "rate": 0.1272
+      },
+      {
+        "item": "Z38.0 - Producto único, nacido en hospital",
+        "count": 108,
+        "rate": 0.126
+      },
+      {
+        "item": "Y95 - Afección nosocomial",
+        "count": 107,
+        "rate": 0.1249
+      },
+      {
+        "item": "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)",
+        "count": 105,
+        "rate": 0.1225
+      },
+      {
+        "item": "Z92.4 - Historia personal de cirugía mayor, no clasificada en otra parte",
+        "count": 105,
+        "rate": 0.1225
+      },
+      {
+        "item": "D64.9 - Anemia de tipo no especificado",
+        "count": 100,
+        "rate": 0.1167
+      },
+      {
+        "item": "N39.0 - Infección de vías urinarias, sitio no especificado",
+        "count": 95,
+        "rate": 0.1109
+      },
+      {
+        "item": "F17.2 - Trastornos mentales y del comportamiento debidos al uso de tabaco, síndrome de dependencia",
+        "count": 95,
+        "rate": 0.1109
+      },
+      {
+        "item": "U07.2 - COVID-19, virus no identificado",
+        "count": 94,
+        "rate": 0.1097
+      },
+      {
+        "item": "I50.0 - Insuficiencia cardíaca congestiva",
+        "count": 91,
+        "rate": 0.1062
+      },
+      {
+        "item": "M79.19 - Mialgia, sitio no especificado",
+        "count": 89,
+        "rate": 0.1039
+      },
+      {
+        "item": "E87.5 - Hiperpotasemia",
+        "count": 85,
+        "rate": 0.0992
+      },
+      {
+        "item": "E03.9 - Hipotiroidismo, no especificado",
+        "count": 72,
+        "rate": 0.084
+      }
+    ],
+    "common_covid_procedures": [
+      {
+        "item": "90.59 - EXAMEN MICROSCOPICO SANGRE.OTRO",
+        "count": 793,
+        "rate": 0.9253
+      },
+      {
+        "item": "90.39 - EXAMEN MICROSCOPICO ORL.OTRO",
+        "count": 733,
+        "rate": 0.8553
+      },
+      {
+        "item": "89.7 - EXAMEN FISICO GENERAL",
+        "count": 633,
+        "rate": 0.7386
+      },
+      {
+        "item": "99.29 - INYECCION SUSTANCIA TERAPEUTICA O PROFILACTICA.OTRA",
+        "count": 598,
+        "rate": 0.6978
+      },
+      {
+        "item": "99.84 - AISLAMIENTO",
+        "count": 586,
+        "rate": 0.6838
+      },
+      {
+        "item": "99.19 - INYECCION ANTICOAGULANTE",
+        "count": 541,
+        "rate": 0.6313
+      },
+      {
+        "item": "99.21 - INYECCION ANTIBIOTICO",
+        "count": 503,
+        "rate": 0.5869
+      },
+      {
+        "item": "99.18 - INYECCION ELECTROLITO",
+        "count": 438,
+        "rate": 0.5111
+      },
+      {
+        "item": "93.96 - ENRIQUECIMIENTO OXIGENO OTRO",
+        "count": 436,
+        "rate": 0.5088
+      },
+      {
+        "item": "87.41 - TOMOGRAFIA AXIAL COMPUTERIZADA TORAX",
+        "count": 428,
+        "rate": 0.4994
+      },
+      {
+        "item": "93.01 - EVALUACION FUNCIONAL",
+        "count": 401,
+        "rate": 0.4679
+      },
+      {
+        "item": "93.18 - EJERCICIO RESPIRATORIO",
+        "count": 386,
+        "rate": 0.4504
+      },
+      {
+        "item": "89.65 - GASOMETRIA ARTERIA",
+        "count": 372,
+        "rate": 0.4341
+      },
+      {
+        "item": "87.44 - RADIOGRAFIA TORAX RUTINARIA",
+        "count": 354,
+        "rate": 0.4131
+      },
+      {
+        "item": "93.99 - TERAPIA RESPIRATORIA.OTRA",
+        "count": 346,
+        "rate": 0.4037
+      },
+      {
+        "item": "93.94 - AEROSOLTERAPIA",
+        "count": 345,
+        "rate": 0.4026
+      },
+      {
+        "item": "57.94 - SONDAJE URINARIO PERMANENTE",
+        "count": 326,
+        "rate": 0.3804
+      },
+      {
+        "item": "99.23 - INYECCION ESTEROIDE",
+        "count": 318,
+        "rate": 0.3711
+      },
+      {
+        "item": "91.39 - EXAMEN MICROSCOPICO URINARIO INFERIOR.OTRO",
+        "count": 309,
+        "rate": 0.3606
+      },
+      {
+        "item": "93.82 - TERAPIA EDUCATIVA",
+        "count": 281,
+        "rate": 0.3279
+      }
+    ],
+    "observed_symptoms": [
+      {
+        "item": "R06.0 - Disnea",
+        "count": 278,
+        "rate": 0.3244
+      },
+      {
+        "item": "R05 - Tos",
+        "count": 227,
+        "rate": 0.2649
+      },
+      {
+        "item": "R50.9 - Fiebre, no especificada",
+        "count": 123,
+        "rate": 0.1435
+      },
+      {
+        "item": "M79.19 - Mialgia, sitio no especificado",
+        "count": 89,
+        "rate": 0.1039
+      },
+      {
+        "item": "R51 - Cefalea",
+        "count": 49,
+        "rate": 0.0572
+      },
+      {
+        "item": "R53 - Malestar y fatiga",
+        "count": 44,
+        "rate": 0.0513
+      },
+      {
+        "item": "A09.9 - Gastroenteritis y colitis de origen no especificado",
+        "count": 19,
+        "rate": 0.0222
+      },
+      {
+        "item": "R11 - Náusea y vómito",
+        "count": 15,
+        "rate": 0.0175
+      }
+    ],
+    "observed_risk_factors": [
+      {
+        "item": "I10 - Hipertensión esencial (primaria)",
+        "count": 383,
+        "rate": 0.4469
+      },
+      {
+        "item": "E11.9 - Diabetes mellitus tipo 2 sin complicaciones",
+        "count": 181,
+        "rate": 0.2112
+      },
+      {
+        "item": "O98.5 - Otras enfermedades virales que complican el embarazo, el parto y el puerperio",
+        "count": 138,
+        "rate": 0.161
+      },
+      {
+        "item": "E66.9 - Obesidad, no especificada",
+        "count": 111,
+        "rate": 0.1295
+      },
+      {
+        "item": "I50.0 - Insuficiencia cardíaca congestiva",
+        "count": 91,
+        "rate": 0.1062
+      },
+      {
+        "item": "I25.2 - Infarto antiguo del miocardio",
+        "count": 47,
+        "rate": 0.0548
+      },
+      {
+        "item": "J44.9 - Enfermedad pulmonar obstructiva crónica, no especificada",
+        "count": 41,
+        "rate": 0.0478
+      },
+      {
+        "item": "N18.5 - Enfermedad renal crónica, estadio 5",
+        "count": 40,
+        "rate": 0.0467
+      },
+      {
+        "item": "I25.1 - Enfermedad aterosclerótica del corazón",
+        "count": 33,
+        "rate": 0.0385
+      },
+      {
+        "item": "E66.8 - Otros tipos de obesidad",
+        "count": 31,
+        "rate": 0.0362
+      },
+      {
+        "item": "J44.1 - Enfermedad pulmonar obstructiva crónica con exacerbación aguda, no especificada",
+        "count": 27,
+        "rate": 0.0315
+      },
+      {
+        "item": "O24.4 - Diabetes mellitus que se origina con el embarazo",
+        "count": 27,
+        "rate": 0.0315
+      },
+      {
+        "item": "I50.9 - Insuficiencia cardíaca, no especificada",
+        "count": 23,
+        "rate": 0.0268
+      },
+      {
+        "item": "I50.1 - Insuficiencia ventricular izquierda",
+        "count": 21,
+        "rate": 0.0245
+      },
+      {
+        "item": "N18.3 - Enfermedad renal crónica, estadio 3",
+        "count": 20,
+        "rate": 0.0233
+      },
+      {
+        "item": "E11.1 - Diabetes mellitus tipo 2 con cetoacidosis",
+        "count": 17,
+        "rate": 0.0198
+      },
+      {
+        "item": "N18.9 - Enfermedad renal crónica, no especificada",
+        "count": 17,
+        "rate": 0.0198
+      },
+      {
+        "item": "E11.5 - Diabetes mellitus tipo 2 con complicaciones circulatorias periféricas",
+        "count": 16,
+        "rate": 0.0187
+      },
+      {
+        "item": "J44.8 - Otras enfermedades pulmonares obstructivas crónicas especificadas",
+        "count": 15,
+        "rate": 0.0175
+      },
+      {
+        "item": "N18.4 - Enfermedad renal crónica, estadio 4",
+        "count": 13,
+        "rate": 0.0152
+      }
+    ],
+    "observed_alarm_conditions": [
+      {
+        "item": "J96.09 - Insuficiencia respiratoria aguda, Tipo no especificado",
+        "count": 199,
+        "rate": 0.2322
+      },
+      {
+        "item": "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)",
+        "count": 105,
+        "rate": 0.1225
+      },
+      {
+        "item": "A41.9 - Sepsis no especificada",
+        "count": 53,
+        "rate": 0.0618
+      },
+      {
+        "item": "R57.2 - Shock séptico",
+        "count": 50,
+        "rate": 0.0583
+      },
+      {
+        "item": "J80 - Síndrome de dificultad respiratoria del adulto",
+        "count": 47,
+        "rate": 0.0548
+      },
+      {
+        "item": "R57.0 - Choque cardiogénico",
+        "count": 13,
+        "rate": 0.0152
+      },
+      {
+        "item": "J96.19 - Insuficiencia respiratoria crónica, Tipo no especificado",
+        "count": 13,
+        "rate": 0.0152
+      },
+      {
+        "item": "A41.8 - Otras septicemias especificadas",
+        "count": 11,
+        "rate": 0.0128
+      },
+      {
+        "item": "R57.1 - Choque hipovolémico",
+        "count": 10,
+        "rate": 0.0117
+      },
+      {
+        "item": "J96.01 - Insuficiencia respiratoria aguda, Tipo II (hipercápnica)",
+        "count": 9,
+        "rate": 0.0105
+      },
+      {
+        "item": "A41.1 - Sepsis por otros estafilococos especificados",
+        "count": 4,
+        "rate": 0.0047
+      },
+      {
+        "item": "A41.5 - Sepsis por otros organnismos Gram negativos",
+        "count": 3,
+        "rate": 0.0035
+      },
+      {
+        "item": "A41.0 - Sepsis por estafilococo aureus",
+        "count": 3,
+        "rate": 0.0035
+      },
+      {
+        "item": "J96.99 - Insuficiencia respiratoria, no especificada, Tipo no especificado",
+        "count": 3,
+        "rate": 0.0035
+      },
+      {
+        "item": "J96.11 - Insuficiencia respiratoria crónica, Tipo II (hipercápnica)",
+        "count": 2,
+        "rate": 0.0023
+      },
+      {
+        "item": "R57.8 - Otras formas de choque",
+        "count": 2,
+        "rate": 0.0023
+      },
+      {
+        "item": "R57.9 - Choque, no especificado",
+        "count": 1,
+        "rate": 0.0012
+      }
+    ],
+    "observed_epidemiological_context": [
+      {
+        "item": "Z29.0 - Aislamiento",
+        "count": 665,
+        "rate": 0.776
+      },
+      {
+        "item": "Z01.7 - Examen de laboratorio",
+        "count": 644,
+        "rate": 0.7515
+      },
+      {
+        "item": "Z20.8 - Contacto con y exposición a otras enfermedades transmisibles",
+        "count": 37,
+        "rate": 0.0432
+      },
+      {
+        "item": "Z58.1 - Exposición al aire contaminado",
+        "count": 3,
+        "rate": 0.0035
+      },
+      {
+        "item": "X61.09 - Envenenamiento autoinfligido intencionalmente por, y exposición a drogas antiepilépticas, sedantes, hipnóticas, antiparkinsonianas y psicotrópicas, no clasificadas en otra parte, vivienda, durante una actividad no especificada",
+        "count": 2,
+        "rate": 0.0023
+      },
+      {
+        "item": "W31.62 - Contacto traumático con otras maquinarias, y las no especificadas, área industrial y de la construcción, mientras trabaja en forma remunerada",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "W26.49 - Contacto traumático con cuchillo, espada, daga o puñal, calles y carreteras, durante una actividad no especificada",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "X02.04 - Exposición a fuego controlado en edificio u otra construcción, vivienda, mientras descansa, duerme, come o realiza otras actividades vitales",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "L24.9 - Dermatitis de contacto por irritantes, de causa no especificada",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "X64.09 - Envenenamiento autoinfligido intencionalmente por, y exposición a otras drogas, medicamentos y sustancias biológicas, y los no especificados, vivienda, durante una actividad no especificada",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "Z20.1 - Contacto con y exposición a tuberculosis",
+        "count": 1,
+        "rate": 0.0012
+      },
+      {
+        "item": "X44.24 - Envenenamiento accidental por, y exposición a otras drogas, medicamentos y sustancias biológicas, y los no especificados, escuelas, otras instituciones y áreas administrativas públicas, mientras descansa, duerme, come o realiza otras actividades vita",
+        "count": 1,
+        "rate": 0.0012
+      }
+    ],
+    "age_summary": {
+      "min": 0,
+      "max": 98,
+      "promedio": 53.1,
+      "mayores_60": 412,
+      "mayores_60_rate": 0.4807
+    },
+    "sex_distribution": [
+      [
+        "Mujer",
+        474
+      ],
+      [
+        "Hombre",
+        383
+      ]
+    ],
+    "sample_high_signal_records": [
+      {
+        "edad": 40,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 11,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "A41.8 - Otras septicemias especificadas",
+          "A41.5 - Sepsis por otros organnismos Gram negativos",
+          "U07.1 - COVID-19, virus identificado",
+          "N18.5 - Enfermedad renal crónica, estadio 5",
+          "I10 - Hipertensión esencial (primaria)"
+        ]
+      },
+      {
+        "edad": 53,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 11,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "R06.0 - Disnea",
+          "R05 - Tos",
+          "R50.9 - Fiebre, no especificada",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)"
+        ]
+      },
+      {
+        "edad": 65,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 12,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "R57.2 - Shock séptico",
+          "R57.1 - Choque hipovolémico",
+          "J80 - Síndrome de dificultad respiratoria del adulto",
+          "E11.1 - Diabetes mellitus tipo 2 con cetoacidosis",
+          "J44.8 - Otras enfermedades pulmonares obstructivas crónicas especificadas",
+          "U07.1 - COVID-19, virus identificado",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "Z20.8 - Contacto con y exposición a otras enfermedades transmisibles"
+        ]
+      },
+      {
+        "edad": 30,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 11,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "J96.09 - Insuficiencia respiratoria aguda, Tipo no especificado",
+          "U07.1 - COVID-19, virus identificado",
+          "I10 - Hipertensión esencial (primaria)"
+        ]
+      },
+      {
+        "edad": 49,
+        "sexo": "Mujer",
+        "puntaje_predictivo": 13,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "R06.0 - Disnea",
+          "R50.9 - Fiebre, no especificada",
+          "R53 - Malestar y fatiga",
+          "R05 - Tos",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)",
+          "J80 - Síndrome de dificultad respiratoria del adulto",
+          "A41.1 - Sepsis por otros estafilococos especificados",
+          "E11.9 - Diabetes mellitus tipo 2 sin complicaciones",
+          "E66.9 - Obesidad, no especificada"
+        ]
+      },
+      {
+        "edad": 55,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 13,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "R06.0 - Disnea",
+          "R05 - Tos",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "J96.09 - Insuficiencia respiratoria aguda, Tipo no especificado",
+          "J80 - Síndrome de dificultad respiratoria del adulto",
+          "A41.8 - Otras septicemias especificadas",
+          "E11.1 - Diabetes mellitus tipo 2 con cetoacidosis",
+          "I10 - Hipertensión esencial (primaria)",
+          "E11.7 - Diabetes mellitus tipo 2 con complicaciones múltiples"
+        ]
+      },
+      {
+        "edad": 33,
+        "sexo": "Mujer",
+        "puntaje_predictivo": 13,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "J96.09 - Insuficiencia respiratoria aguda, Tipo no especificado",
+          "J80 - Síndrome de dificultad respiratoria del adulto",
+          "R06.0 - Disnea",
+          "R50.9 - Fiebre, no especificada",
+          "R05 - Tos",
+          "M79.19 - Mialgia, sitio no especificado",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "A41.9 - Sepsis no especificada",
+          "I10 - Hipertensión esencial (primaria)",
+          "E66.8 - Otros tipos de obesidad"
+        ]
+      },
+      {
+        "edad": 37,
+        "sexo": "Mujer",
+        "puntaje_predictivo": 11,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "J80 - Síndrome de dificultad respiratoria del adulto",
+          "Z20.8 - Contacto con y exposición a otras enfermedades transmisibles",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "E66.8 - Otros tipos de obesidad"
+        ]
+      },
+      {
+        "edad": 59,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 11,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)",
+          "R50.9 - Fiebre, no especificada",
+          "R11 - Náusea y vómito",
+          "R05 - Tos",
+          "M79.19 - Mialgia, sitio no especificado",
+          "A09.9 - Gastroenteritis y colitis de origen no especificado",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio"
+        ]
+      },
+      {
+        "edad": 50,
+        "sexo": "Hombre",
+        "puntaje_predictivo": 13,
+        "diagnosticos_covid_sintomas_riesgo": [
+          "U07.1 - COVID-19, virus identificado",
+          "J96.00 - Insuficiencia respiratoria aguda, Tipo I (hipoxémica)",
+          "R06.0 - Disnea",
+          "Z29.0 - Aislamiento",
+          "Z01.7 - Examen de laboratorio",
+          "E66.9 - Obesidad, no especificada"
+        ]
+      }
+    ]
+  },
+  "orientation_knowledge": {
+    "scope": "Orientacion sanitaria preliminar sobre COVID-19. No entrega diagnosticos, tratamientos farmacologicos ni reemplaza atencion profesional.",
+    "frequent_symptoms": [
+      "fiebre o escalofrios",
+      "tos",
+      "dolor de garganta",
+      "congestion o secrecion nasal",
+      "fatiga o malestar",
+      "dolor muscular",
+      "cefalea",
+      "perdida o cambio del gusto u olfato",
+      "nauseas, vomitos o diarrea",
+      "dificultad para respirar"
+    ],
+    "alarm_signs": [
+      "dificultad para respirar",
+      "dolor o presion persistente en el pecho",
+      "confusion nueva",
+      "somnolencia extrema o dificultad para despertar",
+      "labios, unas o piel azulada, grisacea o muy palida",
+      "fiebre persistente o empeoramiento rapido"
+    ],
+    "risk_factors": [
+      "edad avanzada",
+      "embarazo",
+      "diabetes",
+      "enfermedad cardiovascular o hipertension",
+      "enfermedad pulmonar cronica",
+      "enfermedad renal cronica",
+      "obesidad",
+      "cancer o inmunosupresion"
+    ],
+    "prevention": [
+      "quedarse en casa y evitar contacto estrecho si hay sintomas respiratorios",
+      "ventilar espacios cerrados",
+      "lavado frecuente de manos o alcohol gel",
+      "usar mascarilla bien ajustada en contextos de riesgo o si hay sintomas",
+      "cubrir tos y estornudos",
+      "seguir indicaciones locales de vacunacion y salud publica"
+    ],
+    "when_to_consult": [
+      "si hay factores de riesgo y sintomas compatibles",
+      "si la fiebre persiste o los sintomas empeoran",
+      "si hubo contacto con un caso confirmado y aparecen sintomas",
+      "si se requiere orientacion sobre test, licencia, aislamiento o control medico"
+    ],
+    "when_to_emergency": [
+      "cualquier signo de alarma respiratorio, neurologico o cardiovascular",
+      "dificultad respiratoria en adulto mayor, embarazada o persona con comorbilidades"
+    ]
+  }
+}
